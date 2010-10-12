@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<drawable name="translucent_background">#10000000</drawable>
+	<drawable name="menu_background">#55000000</drawable>
+	<drawable name="menu_button_background">#30efefef</drawable>
+	<color name="red">#ff00</color>
+	<color name="green">#f0f0</color>
+	<color name="blue">#f00f</color>
+	<color name="white">#ffff</color>
+	<color name="black">#f000</color>
+	<color name="yellow">#ffFFF71E</color>
+	<color name="lime">#ffE1FF1E</color>
+</resources>
