@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<FrameLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:layout_weight="1">
+
+		<SurfaceView android:id="@+id/surface" android:layout_width="fill_parent"
+			android:visibility="visible" android:layout_height="fill_parent"
+			>
+		</SurfaceView>
+
+
+		<LinearLayout android:id="@+id/menu_container" android:visibility="gone"
+			android:orientation="vertical" 
+			android:gravity="top" android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
+
+			<LinearLayout  android:id="@+id/statuscontainer" android:visibility="visible"
+			android:orientation="horizontal" android:background="@drawable/play_top"
+			android:layout_width="fill_parent"
+			android:paddingTop="2px"
+			android:layout_weight="0.7"
+			android:layout_height="0dp">
+				<LinearLayout android:visibility="visible"
+				android:orientation="horizontal" 
+				android:gravity="left" android:layout_width="fill_parent"
+				android:layout_weight="0.5"
+				android:layout_height="fill_parent">
+					<TextView 
+						android:id="@+id/title"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:textStyle="bold" 
+						android:textColor="#ffffff"
+						android:text="[CCMEDIA]"
+					/>
+					<TextView 
+						android:id="@+id/subtitle"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:textStyle="bold" 
+						android:paddingLeft="3px"
+						android:textColor="#EFFC00"
+						android:text="Video View"
+					/>
+				</LinearLayout>
+				<LinearLayout android:visibility="visible"
+				android:orientation="horizontal" 
+				android:gravity="right|center_vertical" android:layout_width="fill_parent"
+				android:layout_weight="0.5"
+				android:layout_height="fill_parent">
+					<TextView 
+						android:id="@+id/bitrate"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:textStyle="bold" 
+						android:textColor="#ffffff"
+						android:text="512kbps"
+					/>
+					<View android:id="@+id/dummy" 
+						android:layout_width="5px"  
+						android:layout_height="wrap_content"
+						/>
+					<View android:id="@+id/play_top_lev1" 
+						android:layout_width="5px"  
+						android:layout_height="13px"
+						android:background="@drawable/play_top_lev"
+						/>
+					<View android:id="@+id/dummy" 
+						android:layout_width="4px"  
+						android:layout_height="wrap_content"
+						/>
+					<View android:id="@+id/play_top_lev2" 
+						android:layout_width="5px"  
+						android:layout_height="13px"
+						android:background="@drawable/play_top_lev"
+						/>
+					<View android:id="@+id/dummy" 
+						android:layout_width="4px"  
+						android:layout_height="wrap_content"
+						/>
+					<View android:id="@+id/play_top_lev3" 
+						android:layout_width="5px"  
+						android:layout_height="13px"
+						android:background="@drawable/play_top_lev"
+						/>
+					<View android:id="@+id/dummy" 
+						android:layout_width="4px"  
+						android:layout_height="wrap_content"
+						/>
+					<View android:id="@+id/play_top_lev4" 
+						android:layout_width="5px"  
+						android:layout_height="13px"
+						android:background="@drawable/play_top_lev"
+						/>
+					<View android:id="@+id/dummy" 
+						android:layout_width="4px"  
+						android:layout_height="wrap_content"
+						/>
+				</LinearLayout>
+				
+			</LinearLayout>
+			
+			<View android:id="@+id/dummy" android:layout_width="fill_parent" android:layout_weight="7"
+				android:layout_height="0dp">
+			</View>
+			<FrameLayout  android:id="@+id/menucontainer" android:visibility="visible"
+			android:orientation="horizontal"
+			android:gravity="center" 
+			android:layout_width="fill_parent"
+			android:layout_weight="2"
+			android:paddingBottom="10px"
+			android:layout_height="0dp">
+				<LinearLayout android:id="@+id/center_button_container" android:visibility="visible"
+				android:orientation="horizontal" 
+				android:gravity="center" android:layout_width="fill_parent"
+				android:layout_weight="0.3"
+				android:layout_height="fill_parent">
+					<ImageButton
+				        android:id="@+id/homeview_play_pause_button"
+				        android:layout_width="wrap_content"
+						android:gravity="center"
+						android:layout_height="wrap_content" 
+						android:layout_gravity="center"
+				        android:background="@drawable/homeview_pause_button"
+				        android:visibility="visible"
+				        />
+		        </LinearLayout>
+			</FrameLayout >
+			
+		</LinearLayout>
+	</FrameLayout>
+
+	
+</LinearLayout>
