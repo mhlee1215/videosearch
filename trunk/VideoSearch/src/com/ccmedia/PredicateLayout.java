@@ -119,10 +119,12 @@ public class PredicateLayout extends ViewGroup {
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         final int count = getChildCount();
         final int width = r - l;
+        final int height = (b-getPaddingTop()) - t;
         int xpos = getPaddingLeft();
         int ypos = getPaddingTop();
         Vector<Integer> maxContentHeightByLine = new Vector<Integer>();
 
+        int totalContentHeight = 0;
         int curMaxHeight = 0;
         for (int i = 0; i < count; i++) {
             final View child = getChildAt(i);
@@ -134,6 +136,7 @@ public class PredicateLayout extends ViewGroup {
                 if (xpos + childw > width) {
                     xpos = getPaddingLeft();
                     System.out.println("add line height: "+line_height);
+                    totalContentHeight += curMaxHeight;
                     maxContentHeightByLine.add(curMaxHeight);
                     curMaxHeight = 0;
                 }
@@ -141,12 +144,19 @@ public class PredicateLayout extends ViewGroup {
             }
         }
         maxContentHeightByLine.add(curMaxHeight);
+        totalContentHeight += curMaxHeight;
         
         System.out.println("maxContentHeightByLine: "+maxContentHeightByLine);
         
         xpos = getPaddingLeft();
         int lineCount = 0;
         curMaxHeight = maxContentHeightByLine.get(lineCount);
+        
+        System.out.println("l: "+l+", t: "+t+", r: "+r+", b:"+b);
+        System.out.println("height: "+height);
+        System.out.println("(height-totalContentHeight) / 2;: "+(height-totalContentHeight) / 2);
+        
+        ypos = (height-totalContentHeight) / 2;
         for (int i = 0; i < count; i++) {
             final View child = getChildAt(i);
             if (child.getVisibility() != GONE) {
@@ -166,7 +176,7 @@ public class PredicateLayout extends ViewGroup {
                 int bais = 0;//curMaxHeight-childh - 3;
                 //bais = curMaxHeight-childh;
                 
-                child.layout(xpos, ypos+bais, xpos + childw, ypos + childh+bais);
+                child.layout(xpos, ypos+bais, xpos + childw, ypos + childh+bais+10);
                 xpos += childw + lp.horizontal_spacing;
             }
         }

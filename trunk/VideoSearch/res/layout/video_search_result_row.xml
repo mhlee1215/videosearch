@@ -5,17 +5,20 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@color/black"
+    android:background="@color/white"
     android:cacheColorHint="#00000000"
     android:padding="6dip">
     <ImageView
         android:id="@+id/search_result_thumbnail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingRight="3dip"
+        android:shadowColor="#ff297EFF"
+	    android:shadowRadius="10"
         android:visibility="visible"
          />
     <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
-         android:orientation="vertical" android:background="@color/black"
+         android:orientation="vertical" android:background="@color/white"
     	android:cacheColorHint="#00000000" >
 	    <TextView
 	        android:id="@+id/search_result_title"
@@ -24,6 +27,9 @@
 	        android:visibility="visible"
 	        android:text="test"
 	        android:textSize="17px"
+	        android:textColor="@color/black"
+	        android:shadowColor="#ff297EFF"
+	        android:shadowRadius="3"
 	        android:textStyle="bold"
 	         />
 	    <TextView
@@ -31,7 +37,7 @@
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:gravity="center_vertical"
-	        android:shadowColor="#000000"
+	        android:textColor="@color/black"
 			android:text="test"
 	        android:textSize="13px" />
 	</LinearLayout>

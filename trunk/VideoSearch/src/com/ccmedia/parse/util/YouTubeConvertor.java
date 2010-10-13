@@ -55,6 +55,7 @@ public class YouTubeConvertor {
 			
 			for(MediaContent content : entry.getMediaGroup().getMediaContent()){
 				if(content.getUrl().startsWith("rtsp")){
+					entity.setDescription("¡Ú "+entity.getDescription());
 					entity.setStreamingUrl(content.getUrl());
 					break;
 				}
