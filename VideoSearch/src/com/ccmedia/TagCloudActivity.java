@@ -25,10 +25,8 @@ import android.widget.TextView;
 
 public class TagCloudActivity extends Activity {
 	Animation moveDownAnimation;
-	/** Called when the activity is first created. */
-	@Override
-	public void onCreate(Bundle icicle) {
-		super.onCreate(icicle);
+	
+	public void createCloud(){
 		PredicateLayout l = new PredicateLayout(this);
 		//l.setGravity(Gravity.CENTER);
 		l.setBackgroundColor(Color.WHITE);
@@ -40,8 +38,8 @@ public class TagCloudActivity extends Activity {
 //			l.addView(t, new PredicateLayout.LayoutParams(2, 0));
 //		}
 
-		YouTubeKeywordsGatherer gatherer = new YouTubeKeywordsGatherer();
-		Cloud cloud = gatherer.goSearch(30);
+		//YouTubeKeywordsGatherer gatherer = new YouTubeKeywordsGatherer();
+		Cloud cloud = AppObject.getTagCloud();//gatherer.goSearch(30);
 		List<Tag> tags = cloud.tags();
 		int count = 0;
 		for (Tag tag : tags) {
@@ -90,13 +88,19 @@ public class TagCloudActivity extends Activity {
 			tv.setAnimation(moveDownAnimation);
 			tv.startAnimation(moveDownAnimation);
 			tv.setPadding(5, 0, 5 ,0);
+			int shadowColor = Color.argb(255, 0, 0, 0);
+			tv.setShadowLayer(3, 0, 0, shadowColor);
 			System.out.println("fontsize: "+11*tag.getWeight());
 			System.out.println("int: "+tag.getWeightInt());
 			System.out.println("nom: "+tag.getNormScore());
 			tv.setTextSize((float) (20*Math.log(Math.pow(tag.getWeight(), 2)+1)));
 			//System.out.println("tagWeight: "+tag.getWeight()+", "+tag.getWeightInt());
 			tv.setText(tag.getName());
-			tv.setTextColor(Color.BLACK);
+			int a = (int) (255 - 0*50*Math.log(Math.pow(tag.getWeight(), 2)+1));
+			int r = (int) (150 + 0*30*Math.log(Math.pow(tag.getWeight(), 2)+1));
+			int g = (int) (200 + 0*30*Math.log(Math.pow(tag.getWeight(), 2)+1));
+			int b = 255;
+			tv.setTextColor(Color.argb(a, r, g, b));
 			tv.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 			tv.setOnClickListener(new OnClickListener() {
 				
@@ -162,6 +166,12 @@ public class TagCloudActivity extends Activity {
 //		l.addView(tv, new PredicateLayout.LayoutParams(2, 0));
 		
 		setContentView(l);
+	}
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle icicle) {
+		super.onCreate(icicle);
+		createCloud();
 	}
 
 }

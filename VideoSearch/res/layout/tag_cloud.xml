@@ -4,8 +4,7 @@
 	android:layout_height="fill_parent">
 	<FrameLayout android:layout_width="fill_parent"
 		android:layout_height="fill_parent">
-
-
+		
 		<LinearLayout android:id="@+id/tag_container"
 			android:layout_width="fill_parent"
 			android:gravity="center"

@@ -10,6 +10,14 @@ import android.widget.TabHost;
 public class MainTabActivity extends TabActivity {
 
 	TabHost host;
+	 
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+        finish();
+	}
+	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle icicle) {
@@ -25,7 +33,7 @@ public class MainTabActivity extends TabActivity {
 	    intent = new Intent().setClass(this, TagCloudActivity.class);
 
 	    // Initialize a TabSpec for each tab and add it to the TabHost
-	    spec = tabHost.newTabSpec("Keywords").setIndicator("Keywords",
+	    spec = tabHost.newTabSpec("Keywords").setIndicator("Tags",
 	                      res.getDrawable(R.drawable.tab_menu_1))
 	                  .setContent(intent);
 	    tabHost.addTab(spec);
@@ -38,7 +46,7 @@ public class MainTabActivity extends TabActivity {
 	    tabHost.addTab(spec);
 
 	    intent = new Intent().setClass(this, VideoSearchActivity.class);
-	    spec = tabHost.newTabSpec("View").setIndicator("View",
+	    spec = tabHost.newTabSpec("View").setIndicator("Multi View",
 	                      res.getDrawable(R.drawable.tab_menu_3))
 	                  .setContent(intent);
 	    tabHost.addTab(spec);

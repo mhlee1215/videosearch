@@ -95,7 +95,7 @@ public class SearchResultAdapter extends ArrayAdapter<VideoEntity> {
             TextView txtName = (TextView) v.findViewById(R.id.search_result_title);
             if (txtName != null) txtName.setText( String.format("%s", resultTitle) );
         }
-        String resultDescription = items.get(position).getStreamingUrl();
+        String resultDescription = items.get(position).getDescription();
         if (resultDescription != null) {
             TextView txtName = (TextView) v.findViewById(R.id.search_result_description);
             if (txtName != null) txtName.setText( String.format("%s", resultDescription) );
